@@ -5,6 +5,11 @@
 Avatar *avatar;
 TaskHandle_t taskHandle;
 
+extern const unsigned char avatar_fugu_bg[];
+extern const unsigned char avatar_fugu_water1[];
+extern const unsigned char avatar_fugu_water2[];
+extern const unsigned char avatar_fugu_water3[];
+
 void breath(void *args)
 {
   int c = 0;
@@ -107,7 +112,7 @@ void setup()
   M5.Lcd.setBrightness(30);
   M5.Lcd.clear();
   M5.Lcd.setRotation(1);
-  M5.Lcd.drawJpgFile(SD, "/jpg/Avatar_fugu_bg.jpg");
+  M5.Lcd.drawJpg(avatar_fugu_bg, 3998);
   startAvatar(); // start drawing
 }
 
@@ -124,14 +129,14 @@ void loop()
     M5.Lcd.fillEllipse(160, 155, 30, 30, TFT_CYAN);
     while (M5.BtnB.isPressed()) {
       M5.update();
-      M5.Lcd.drawJpgFile(SD, "/jpg/Avatar_fugu_water1.jpg", 128, 155);
+      M5.Lcd.drawJpg(avatar_fugu_water1, 928, 128, 155);
       delay(100);
-      M5.Lcd.drawJpgFile(SD, "/jpg/Avatar_fugu_water2.jpg", 128, 155);
+      M5.Lcd.drawJpg(avatar_fugu_water2, 1040, 128, 155);
       delay(100);
-      M5.Lcd.drawJpgFile(SD, "/jpg/Avatar_fugu_water3.jpg", 128, 155);
+      M5.Lcd.drawJpg(avatar_fugu_water3, 606, 128, 155);
       delay(100);
     }
-    M5.Lcd.drawJpgFile(SD, "/jpg/Avatar_fugu_bg.jpg");
+    M5.Lcd.drawJpg(avatar_fugu_bg, 3998);
     vTaskResume(taskHandle); 
   }  
 }

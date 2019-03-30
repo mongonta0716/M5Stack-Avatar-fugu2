@@ -1,24 +1,29 @@
-# M5Stack-Avatar-fugu1
+# M5Stack-Avatar-fugu2
 
-M5Stack Avatarのフグバージョンです。
+M5Stack Avatarのフグバージョン2です。
 
 Avatar表示は、robo8080さんの[M5Stack_WebRadio_Avator](https://github.com/robo8080/M5Stack_WebRadio_Avator)をベースにさせていただきました。
 M5Stack-avatarのオリジナルはmeganetaaanさんの[m5stack-avatar](https://github.com/meganetaaan/m5stack-avatar)です。
 
 背景にJPGファイルを利用したかったのでm5stack-avatarの古いバージョンを利用しています。
 
+# [M5Stack-Avatar-fugu1](https://github.com/mongonta0716/M5Stack-Avatar-fugu1)との違い
+JPGデータを内部に持つようにしました。
+伸び縮み機能も追加する予定です。
+
+## JPGデータの変換について
+変換前のデータはjpgフォルダにあります。
+下記リンクにあるbin2code.pyを使用するとcのコードに変換できます。
+https://github.com/m5stack/M5Stack/tree/master/tools
+
 # 使い方(Usage)
 
-Avatar_fugu.bin,jpgフォルダ,jsonフォルダをmicroSDカードのルート上にコピーします。
+buildフォルダ配下にあるAvatar_fugu2.bin,jpgフォルダ,jsonフォルダをmicroSDカードのルート上にコピーして、
 [M5Stack LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)から起動します。
 
 ボタンBを押すと水を吐きます。
 
 LovyanLauncherの詳しい使い方は下記のブログにて解説しています。
-
-Copy Avatar_fugu.bin, jpg and json folder on root of microSDCard.It can be launched from [M5Stack LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher).When button B is pressed, the pufferfish pours water.
-
-Read the following blog for a detailed explanation of LovyanLauncher.(in Japanese)
 
 [M5Stack LovyanLauncherの使い方｜ラズパイ好きの日記](https://raspberrypi.mongonta.com/howto-use-m5stack-lovyanlauncher/)
 
